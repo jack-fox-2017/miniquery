@@ -55,9 +55,16 @@
 
     function demoDOM() {
       DOM.hide('.klass')
-      DOM.show('.klass')
-      DOM.removeClass('.klass', 'shaded')
+      // DOM.show('.klass')
+      // DOM.addClass('.klass', 'shaded')
+      // DOM.removeClass('.klass', 'shaded')
+      setTimeout(function() {
+        DOM.show('.klass')
+      }, 2000)
       DOM.addClass('.klass', 'shaded')
+      setTimeout(function() {
+        DOM.removeClass('.klass', 'shaded')
+      }, 5000)
     }
 
     function demoEventDispatcher() {
@@ -68,6 +75,7 @@
 
     function demoAjax() {
       AjaxWrapper.request({
+        // url: 'http://127.0.0.1:8080/',
         url: 'http://localhost:3000/',
         type: 'GET',
         success: function(data) {
