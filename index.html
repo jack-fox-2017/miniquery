@@ -85,6 +85,27 @@
       setTimeout(function() {
         miniquery("#eyed").show()
       }, 2000)
+
+      miniquery(".klass").addClass()
+      setTimeout(function() {
+        miniquery(".klass").removeClass()
+      }, 2000)
+
+      miniquery(".klass").on('shaded', function(){console.log("Awesome")})
+      setTimeout(function() {
+        miniquery(".klass").trigger('shaded')
+      }, 2000)
+
+      miniquery().ajax({
+        url: 'http://localhost:3000/',
+        type: 'GET',
+        success: function(data) {
+          console.log("Success: ", data)
+        },
+        fail: function() {
+          console.log("ERROR")
+        }
+      })
     }
 
     function demoAlias() {
