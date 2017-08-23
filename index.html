@@ -62,8 +62,10 @@
 
     function demoEventDispatcher() {
       EventDispatcher.on('.klass', 'click', function() {
-        console.log("Awesome")
+        console.log("Awesome") // kalo class Klass di click bakal kluar "awesome"
       })
+
+      // EventDispatcher.trigger('.klass', 'click');
     }
 
     function demoAjax() {
