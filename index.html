@@ -36,7 +36,7 @@
       <div id="eyed">id: eyed</div>
       <div class="klass">class: klass 1</div>
       <a class="klass" href="#hello">Hello!</a>
-      <div class="klass">class: klass 2</div>
+      <div class="klass ">class: klass 2</div>
     </div>
 
   </body>
@@ -85,14 +85,32 @@
       setTimeout(function() {
         miniquery("#eyed").show()
       }, 2000)
+      miniquery(".klass").addClass()
+      setTimeout(function() {
+        miniquery(".klass").removeClass()
+      }, 2000)
+      miniquery(".klass").on('shaded', function(){console.log("Awesome")})
+      setTimeout(function() {
+        miniquery(".klass").trigger('shaded')
+      }, 2000)
+      miniquery().ajax({
+        url: 'http://localhost:3000/',
+        type: 'GET',
+        success: function(data) {
+          console.log("Success: ", data)
+        },
+        fail: function() {
+          console.log("ERROR")
+        }
+      })
     }
 
     function demoAlias() {
-      $("#eyed").hide()
-      setTimeout(function() {
-        $("#eyed").show()
-      }, 2000)
-    }
+     $("#eyed").hide()
+     setTimeout(function() {
+       $("#eyed").show()
+     }, 2000)
+   }
   </script>
 
 </html>
