@@ -38,9 +38,9 @@
 
     <div class="container">
       <div id="eyed">id: eyed</div>
-      <div class="klass shaded" >class: klass 1</div>
-      <a class="klass shaded" href="#hello">Hello!</a>
-      <div class="klass shaded">class: klass 2</div>
+      <div class="klass" >class: klass 1</div>
+      <a class="klass" href="#hello">Hello!</a>
+      <div class="klass">class: klass 2</div>
     </div>
 
   </body>
@@ -58,10 +58,10 @@
     }
 
     function demoDOM() {
-      // DOM.hide('.klass')
-      // DOM.show('.klass')
+      DOM.hide('.klass')
+      DOM.show('.klass')
       DOM.removeClass('.klass', 'shaded')
-      // DOM.addClass('.klass', 'shaded')
+      DOM.addClass('.klass', 'shaded')
     }
 
     function demoEventDispatcher() {
@@ -95,7 +95,13 @@
       $("#eyed").hide()
       setTimeout(function() {
         $("#eyed").show()
-      }, 2000)
+        setTimeout(function() {
+          $(".klass").addClass('shaded')
+          setTimeout(function() {
+            $(".klass").removeClass('shaded')
+          }, 1000)
+        }, 1000)
+      }, 1000)
     }
   </script>
 
