@@ -14,6 +14,10 @@
       .shaded {
         color: gray;
       }
+
+      /*.klass {
+        display: none;
+      }*/
     </style>
     <script src="lib/miniquery.js"></script>
   </head>
@@ -34,7 +38,7 @@
 
     <div class="container">
       <div id="eyed">id: eyed</div>
-      <div class="klass">class: klass 1</div>
+      <div class="klass" >class: klass 1</div>
       <a class="klass" href="#hello">Hello!</a>
       <div class="klass">class: klass 2</div>
     </div>
@@ -91,7 +95,13 @@
       $("#eyed").hide()
       setTimeout(function() {
         $("#eyed").show()
-      }, 2000)
+        setTimeout(function() {
+          $(".klass").addClass('shaded')
+          setTimeout(function() {
+            $(".klass").removeClass('shaded')
+          }, 1000)
+        }, 1000)
+      }, 1000)
     }
   </script>
 
